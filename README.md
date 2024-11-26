@@ -8,10 +8,13 @@ This project visualizes US counties and overlays college locations using the Alb
 ### Adjusted Territories and College Overlay
 
 The following adjustments are made for accurate placement:
-- **Alaska:** Scaled down and shifted.
-- **Hawaii:** Enlarged and relocated.
-- **Puerto Rico:** Adjusted position and scale.
-- **Washington, D.C.:** Enlarged and shifted for visibility.
+- `transform_alaska` Scaled down and shifted.
+- `transform_hawaii` Enlarged and relocated.
+- `transform_puerto_rico` Adjusted position and scale.
+- `transform_dc` Enlarged and shifted for visibility.
+
+Each function adjusts the geometry of respective regions to align with the map.
+
 
 Maps include:
 1. **US Counties:**
@@ -21,16 +24,6 @@ Maps include:
 2. **US State Boundaries:**
    - Aggregated state-level boundaries with adjusted territories.
   
-### Key Functions
-
-Territory Transformations
-- `transform_alaska`
-- `transform_hawaii`
-- `transform_puerto_rico`
-- `transform_dc`
-
-Each function adjusts the geometry of respective regions to align with the map.
-
 ## Dependencies
 
 This project relies on the following Python libraries:

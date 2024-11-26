@@ -3,7 +3,7 @@
 
 ## Background and Overview
 
-This project visualizes US counties and overlays college locations using the Albers Equal Area projection. To maintain geographic accuracy while fitting all regions onto a single map, transformations are applied to Alaska, Hawaii, Puerto Rico, and Washington, D.C., adjusting their positions and scales relative to the continental US. The map also aggregates counties into state boundaries for high-level visualizations.
+This code visualizes US counties and overlays college locations using the Albers Equal Area projection. To maintain geographic accuracy while fitting all regions onto a single map, transformations are applied to Alaska, Hawaii, Puerto Rico, and Washington, D.C., adjusting their positions and scales relative to the continental US. The map also aggregates counties into state boundaries for high-level visualizations.
 
 ### Adjusted Territories and College Overlay
 

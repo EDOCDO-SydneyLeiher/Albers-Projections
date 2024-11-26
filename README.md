@@ -1,30 +1,53 @@
-# US Counties and Locations with Albers Projection
+<h1 align="center">US Counties and College Locations with Albers Projection</h1>
+<h3 align="center">Mapping US Counties and Colleges with Adjusted Territories</h3>
 
-This project visualizes US counties and IHEs using the Albers Equal Area projection. The map includes adjustments for Alaska, Hawaii, Puerto Rico, and Washington, D.C., ensuring all territories are accurately represented within the continental US map. The project also overlays college locations on the map.
+## Background and Overview
 
-## Features
+This project visualizes US counties and overlays college locations using the Albers Equal Area projection. To maintain geographic accuracy while fitting all regions onto a single map, transformations are applied to Alaska, Hawaii, Puerto Rico, and Washington, D.C., adjusting their positions and scales relative to the continental US. The map also aggregates counties into state boundaries for high-level visualizations.
 
-- **County Shapefile Visualization:** Maps US counties using the Albers Equal Area projection.
-- **College Locations Overlay:** Displays the location of IHEs in the same projection.
-- **Territory Adjustments:** Adjusts Alaska, Hawaii, Puerto Rico, and Washington, D.C. for better visualization in Tableau.
-- **State Boundary Aggregation:** Option to visualize US state boundaries instead of counties or for map overlay.
+### Adjusted Territories and College Overlay
 
-## Acknowledgements and Data Sources
+The following adjustments are made for accurate placement:
+- **Alaska:** Scaled down and shifted.
+- **Hawaii:** Enlarged and relocated.
+- **Puerto Rico:** Adjusted position and scale.
+- **Washington, D.C.:** Enlarged and shifted for visibility.
 
-- US county shapefile from Census Bureau
-- IHEs lat and long from project-specific dataset
+Maps include:
+1. **US Counties:**
+   - County boundaries 
+2. **US Counties with College Locations:**
+    - County boundaries and college locations (blue markers).
+2. **US State Boundaries:**
+   - Aggregated state-level boundaries with adjusted territories.
+  
+### Key Functions
 
-## Requirements
+Territory Transformations
+- `transform_alaska`
+- `transform_hawaii`
+- `transform_puerto_rico`
+- `transform_dc`
 
-The project requires the following libraries:
+Each function adjusts the geometry of respective regions to align with the map.
 
-- `pandas`
-- `geopandas`
-- `matplotlib`
-- `shapely`
-- `openpyxl` (for reading Excel files)
+## Dependencies
 
-Install the required libraries with:
+This project relies on the following Python libraries:
+- `pandas`: Data manipulation.
+- `geopandas`: Geospatial data processing.
+- `matplotlib`: Visualization.
+- `shapely`: Geometric transformations.
+- `openpyxl`: For reading Excel files.
+
+Install dependencies with:
 
 ```bash
 pip install pandas geopandas matplotlib shapely openpyxl
+```
+
+## Authors
+Sydney Leiher,
+Data Scientist,
+U.S. Department of Education
+

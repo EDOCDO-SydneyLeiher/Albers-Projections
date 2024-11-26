@@ -15,8 +15,32 @@ The following adjustments are made for accurate placement:
 
 Each function adjusts the geometry of respective regions to align with the map.
 
+### Key Steps: `transform_alaska`
+This function applies two transformations to Alaska's geometry:
+```
+def transform_alaska(geometry):
+    # Translate and scale Alaska 
+    return scale(translate(geometry, xoff=-2000000, yoff=-7000000), xfact=0.4, yfact=0.4, origin=(0, 0))
 
-Maps include:
+gdf.loc[gdf['STATEFP'] == '02', 'geometry'] = gdf.loc[gdf['STATEFP'] == '02', 'geometry'].apply(transform_alaska)
+```
+**1. Translation (`translate`)**:  
+   Moves the geometry by a certain distance along the x-axis and y-axis. In this case:  
+   - `xoff=-2000000`: Moves Alaska 2 million units to the left.  
+   - `yoff=-7000000`: Moves Alaska 7 million units downward.
+
+**2. Scaling (`scale`)**:  
+   Shrinks the geometry by reducing its size by 40%.  
+   - `xfact=0.4` and `yfact=0.4`: Scale factors for the x and y dimensions.  
+   - `origin=(0, 0)`: The scaling is performed relative to the coordinate `(0, 0)`, ensuring consistency in how the geometry shrinks.
+
+**3. Applying the Transformation**
+   The code filters the GeoDataFrame (`gdf`) to select rows where `STATEFP` equals `'02'` (Alaska). For the selected rows, it applies the `transform_alaska` function to the `geometry` column, which contains Alaska's geometric shape.
+
+**4. Updating the Geometry**
+   The result of the `transform_alaska` function is saved back into the `geometry` column for Alaska.
+
+## Maps:
 1. **US Counties:**
    - County boundaries 
 2. **US Counties with College Locations:**
